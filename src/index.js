@@ -10,8 +10,8 @@ const operators = {
 
 const Node = (operator, value, left = null, right = null) => {
   const result = function () {
-    if (this.operator) {
-      return operators[this.operator](left.result(), right.result())
+    if (operator) {
+      return operators[operator](left.result(), right.result())
     }
     return value;
   };
