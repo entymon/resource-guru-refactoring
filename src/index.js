@@ -10,15 +10,15 @@ const operators = {
 
 const Node = (operator, value, left = null, right = null) => {
   const result = function () {
-    if (operator) {
+    if (operator && (left !== null || right !== null)) {
       return operators[operator](left.result(), right.result())
     }
     return value;
   };
 
   const toString = function () {
-    if (this.operator) {
-      return `(${left.toString()} ${this.operator} ${right.toString()})`;
+    if (operator && (left !== null || right !== null)) {
+      return `(${left.toString()} ${operator} ${right.toString()})`;
     }
     return value.toString();
   };
@@ -47,4 +47,7 @@ const tree = Node("÷", null,
   Node("", 6)
 );
 
-export default tree;
+export {
+  tree,
+  Node
+}

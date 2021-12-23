@@ -1,5 +1,5 @@
 import assert from "assert";
-import tree from "../src/index.js";
+import { tree, Node } from "../src/index.js";
 
 describe('Tree', function() {
   it('should return correct string value', function() {
@@ -8,5 +8,10 @@ describe('Tree', function() {
 
   it('should return correct calculated result', function() {
     assert.strictEqual(2, tree.result());
+  });
+
+  it('should return value null if the right OR the left side is null', function() {
+    const testValue = Node("+", null, null, null)
+    assert.strictEqual(null, testValue.value);
   });
 });
