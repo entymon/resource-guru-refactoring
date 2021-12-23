@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "refactoring an expression tree ",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "test": "mocha"
   },

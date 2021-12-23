@@ -1,5 +1,3 @@
-const assert = require("assert");
-
 const Node = (operator, value, left, right) => {
   const result = function () {
     switch (this.operator) {
@@ -58,5 +56,4 @@ const tree = Node(
   Node("", 6, null, null)
 );
 
-assert.strictEqual("((7 + ((3 - 2) x 5)) ÷ 6)", tree.toString());
-assert.strictEqual(2, tree.result());
+export default tree;
