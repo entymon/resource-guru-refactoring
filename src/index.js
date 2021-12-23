@@ -1,17 +1,19 @@
+const operators = {
+  '+': (a, b) => (a + b),
+  '-': (a, b) => (a - b),
+  'x': (a, b) => (a * b),
+  '÷': (a, b) => {
+    if (b === 0) throw new Error('The right argument cannot be 0!')
+    return a / b
+  },
+}
+
 const Node = (operator, value, left, right) => {
   const result = function () {
-    switch (this.operator) {
-      case "+":
-        return left.result() + right.result();
-      case "-":
-        return left.result() - right.result();
-      case "x":
-        return left.result() * right.result();
-      case "÷":
-        return left.result() / right.result();
-      default:
-        return value;
+    if (this.operator) {
+      return operators[this.operator](left.result(), right.result())
     }
+    return value;
   };
 
   const toString = function () {
