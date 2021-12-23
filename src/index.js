@@ -33,17 +33,14 @@ const Node = (operator, value, left = null, right = null) => {
   };
 };
 
-const tree = Node(
-  "÷",
-  null,
-  Node(
-    "+",
-    null,
+const tree = Node("÷", null,
+  Node("+", null,
     Node("", 7),
-    Node(
-      "x",
-      null,
-      Node("-", null, Node("", 3), Node("", 2)),
+    Node("x", null,
+      Node("-", null,
+        Node("", 3),
+        Node("", 2)
+      ),
       Node("", 5)
     )
   ),
